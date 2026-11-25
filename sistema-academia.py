@@ -29,6 +29,12 @@ def cadastrarAluno(lista_alunos):
     lista_alunos.append(dados_aluno)
     print("\nAluno cadastrado com sucesso!")
 
+def verificar_plano(lista_alunos):
+    cpf_busca = input("Digite o cpf do aluno: ").strip()
+    for aluno in lista_alunos:
+        if aluno["cpf"] == cpf_busca:
+            print(f"Aluno {aluno["nome"]} está no plano {aluno["plano"]}.")
+            return
 
 
 
