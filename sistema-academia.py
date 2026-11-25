@@ -15,7 +15,7 @@ def cadastrarAluno(lista_alunos):
         cpf = input("Digite o cpf do aluno: ")
         if cpf.isdigit() and len(cpf) == 11:
             break
-        print("CPF inválido, por favor digite um CPF válido com 11 digitos.")
+        print("\nCPF inválido, por favor digite um CPF válido com 11 digitos.")
 
     aluno = Alunos(nome, idade, cpf, plano)
 
@@ -33,8 +33,21 @@ def verificar_plano(lista_alunos):
     cpf_busca = input("Digite o cpf do aluno: ").strip()
     for aluno in lista_alunos:
         if aluno["cpf"] == cpf_busca:
-            print(f"Aluno {aluno["nome"]} está no plano {aluno["plano"]}.")
+            print(f"\nAluno {aluno["nome"]} está no plano {aluno["plano"]}.")
             return
+    print("\nAluno não encontrado!")
+
+def alterar_plano(lista_alunos):
+    cpf_busca = input("Digite o cpf do aluno: ").strip()
+    for aluno in lista_alunos:
+        if aluno["cpf"] == cpf_busca:
+            aluno["plano"] = input("Digite o novo plano do aluno: ").strip()
+            print("\nPlano alterado com sucesso!")
+            return
+    print(f"\nAluno não encontrado.")
+
+
+
 
 
 
